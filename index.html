@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="content">
+
+        <!-- Tela de Apresentação -->
+        <div id="screen0" class="screen active">
+            <h2>Bem-vindo ao Life Simulator!</h2>
+            <label for="name">Seu nome: </label><input type="text" id="name" placeholder="Digite seu nome">
+            <button class="next-btn" onclick="startGame()">Começar</button>
+        </div>
+
+        <!-- Tela 1: Nascimento -->
+        <div id="screen1" class="screen">
+            <h2>Você acabou de nascer! Qual é o seu gênero?</h2>
+            <button onclick="selectChoice('gender', 'Masculino')">Masculino</button>
+            <button onclick="selectChoice('gender', 'Feminino')">Feminino</button>
+        </div>
+
+        <!-- Tela 2: Escola Primária -->
+        <div id="screen2" class="screen">
+            <h2>Está na hora de ir para a escola primária. Como você se sente no primeiro dia?</h2>
+            <button onclick="selectChoice('school-feeling', 'Animado')">Animado</button>
+            <button onclick="selectChoice('school-feeling', 'Nervoso')">Nervoso</button>
+            <button onclick="selectChoice('school-feeling', 'Indiferente')">Indiferente</button>
+        </div>
+
+        <!-- Tela 3: Primeira Amizade -->
+        <div id="screen3" class="screen">
+            <h2>Você fez um novo amigo na escola. Como é sua relação com ele?</h2>
+            <button onclick="selectChoice('friendship', 'Melhores amigos')">Melhores amigos</button>
+            <button onclick="selectChoice('friendship', 'Apenas colegas')">Apenas colegas</button>
+        </div>
+
+        <!-- Tela 4: Esportes -->
+        <div id="screen4" class="screen">
+            <h2>Na adolescência, você decide se juntar a um clube esportivo. Qual esporte você escolhe?</h2>
+            <button onclick="selectChoice('sport', 'Futebol')">Futebol</button>
+            <button onclick="selectChoice('sport', 'Basquete')">Basquete</button>
+            <button onclick="selectChoice('sport', 'Natação')">Natação</button>
+        </div>
+
+        <!-- Tela 5: Primeiro Amor -->
+        <div id="screen5" class="screen">
+            <h2>Você se apaixonou pela primeira vez. Como foi a experiência?</h2>
+            <button onclick="selectChoice('love', 'Maravilhoso')">Maravilhoso</button>
+            <button onclick="selectChoice('love', 'Complicado')">Complicado</button>
+        </div>
+
+        <!-- Tela 6: Faculdade -->
+        <div id="screen6" class="screen">
+            <h2>Está na hora de escolher uma faculdade. Qual área você escolhe?</h2>
+            <button onclick="selectChoice('college', 'Engenharia')">Engenharia</button>
+            <button onclick="selectChoice('college', 'Artes')">Artes</button>
+            <button onclick="selectChoice('college', 'Medicina')">Medicina</button>
+        </div>
+
+        <!-- Tela 7: Família -->
+        <div id="screen7" class="screen">
+            <h2>Você se casa e tem dois filhos. Como você os chama?</h2>
+            <label for="sonName">Nome do seu filho: </label>
+            <input type="text" id="sonName" placeholder="Digite o nome do seu filho">
+            <label for="daughterName">Nome da sua filha: </label>
+            <input type="text" id="daughterName" placeholder="Digite o nome da sua filha">
+            <button onclick="setChildNames()">Continuar</button>
+        </div>
+
+        <!-- Tela 8: Trabalho -->
+        <div id="screen8" class="screen">
+            <h2>Depois de se formar, você conseguiu um emprego. Como é seu trabalho?</h2>
+            <button onclick="selectChoice('job', 'Satisfatório')">Satisfatório</button>
+            <button onclick="selectChoice('job', 'Estressante')">Estressante</button>
+            <button onclick="selectChoice('job', 'Relaxante')">Relaxante</button>
+        </div>
+
+        <!-- Tela Final -->
+        <div id="screen9" class="screen">
+            <h2>Resumo da sua vida:</h2>
+            <p>Nome: <span id="choice-name">__________</span></p>
+            <p>Gênero: <span id="choice-gender">__________</span></p>
+            <p>Primeiro dia de escola: <span id="choice-school-feeling">__________</span></p>
+            <p>Relação com o amigo da escola: <span id="choice-friendship">__________</span></p>
+            <p>Esporte na adolescência: <span id="choice-sport">__________</span></p>
+            <p>Primeiro amor: <span id="choice-love">__________</span></p>
+            <p>Área da faculdade: <span id="choice-college">__________</span></p>
+            <p>Nome do seu filho: <span id="choice-son-name">__________</span></p>
+            <p>Nome da sua filha: <span id="choice-daughter-name">__________</span></p>
+            <p>Opinião sobre o emprego: <span id="choice-job">__________</span></p>
+            <button onclick="restartGame()">Recomeçar</button>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
